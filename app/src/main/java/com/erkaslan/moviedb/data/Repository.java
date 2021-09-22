@@ -73,12 +73,16 @@ public class Repository implements MovieInterface, SingleMovieInterface {
                             Log.v(TAG, "****list size" + String.valueOf(movieList.size()));
 
                         } catch (JSONException e) {
+                            ArrayList<Movie> movieError = new ArrayList<>();
+                            movieInterface.onSuccess(movieError);
                             e.printStackTrace();
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                ArrayList<Movie> movieError = new ArrayList<>();
+                movieInterface.onSuccess(movieError);
                 error.printStackTrace();
             }
         });
@@ -87,7 +91,7 @@ public class Repository implements MovieInterface, SingleMovieInterface {
     }
 
 
-    //Sets url for omdb api gets the list and sends to interface on success
+    //Sets url for omdb api gets the single movie details and sends to interface on success
     public void setSingleMovie(String imdbID, final SingleMovieInterface singleMovieInterface){
 
         String url = "https://www.omdbapi.com/?apikey=bc3334c&i=" + imdbID.trim();
@@ -112,6 +116,7 @@ public class Repository implements MovieInterface, SingleMovieInterface {
                             Log.v(TAG, "****movie set");
 
                         } catch (JSONException e) {
+
                             e.printStackTrace();
                         }
                     }
