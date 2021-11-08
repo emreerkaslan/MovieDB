@@ -27,6 +27,7 @@ import java.util.ListIterator;
 
 
 public class Repository implements MovieInterface, SingleMovieInterface {
+
     private static final String TAG = "REP";
     private Application application;
     private ArrayList<Movie> movieList = new ArrayList<>();

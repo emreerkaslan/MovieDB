@@ -106,16 +106,17 @@ public class HomeFragment extends Fragment{
         sharedViewModel.getMovieList().observe(getViewLifecycleOwner(), new Observer<ArrayList<Movie>>() {
             @Override
             public void onChanged(ArrayList<Movie> moviesAll) {
+
+                progressBar.setVisibility(View.GONE);
+
                 if (moviesAll.size() == 0) {
                     Log.v(TAG, "****movie not found");
-                    progressBar.setVisibility(View.GONE);
                     movie.setVisibility(View.GONE);
                     textNotFound.setText("No movie found...are you sure about the title?");
                     textNotFound.setVisibility(View.VISIBLE);
                 }else{
                     Log.v(TAG, "onChanged: XXX");
                     Log.v(TAG, "movies number: " + String.valueOf(moviesAll.size()));
-                    progressBar.setVisibility(View.GONE);
                     textNotFound.setVisibility(View.INVISIBLE);
 
                     movieAdapter = new MovieListAdapter(getContext(), moviesAll);

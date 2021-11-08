@@ -54,6 +54,7 @@ public class MovieApi {
 
     private static final String TAG = "MovieApi";
 
+
     public ArrayList<Movie> getMovieList(String url){
 
         ArrayList<Movie> movieList = new ArrayList<>();
