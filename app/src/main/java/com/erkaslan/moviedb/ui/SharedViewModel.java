@@ -7,9 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.erkaslan.moviedb.MovieInterface;
-import com.erkaslan.moviedb.Repository;
-import com.erkaslan.moviedb.SingleMovieInterface;
+import com.erkaslan.moviedb.data.MovieInterface;
+import com.erkaslan.moviedb.data.Repository;
+import com.erkaslan.moviedb.data.SingleMovieInterface;
 import com.erkaslan.moviedb.data.Movie;
 
 import java.util.ArrayList;

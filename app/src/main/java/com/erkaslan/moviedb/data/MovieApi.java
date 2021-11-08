@@ -1,4 +1,4 @@
-package com.erkaslan.moviedb;
+package com.erkaslan.moviedb.data;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -54,7 +54,7 @@ public class MovieApi {
 
     private static final String TAG = "MovieApi";
 
-
+    /*
     public ArrayList<Movie> getMovieList(String url){
 
         ArrayList<Movie> movieList = new ArrayList<>();
@@ -94,5 +94,5 @@ public class MovieApi {
         instance.addToRequestQueue(request);
         return movieList;
     }
-
+    */
 }

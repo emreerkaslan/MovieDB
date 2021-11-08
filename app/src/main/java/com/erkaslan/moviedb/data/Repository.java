@@ -1,4 +1,4 @@
-package com.erkaslan.moviedb;
+package com.erkaslan.moviedb.data;
 
 import android.app.Application;
 import android.media.MediaRouter;
@@ -13,6 +13,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.erkaslan.moviedb.data.MovieInterface;
+import com.erkaslan.moviedb.data.SingleMovieInterface;
 import com.erkaslan.moviedb.data.Movie;
 
 import org.json.JSONArray;

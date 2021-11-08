@@ -24,7 +24,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.erkaslan.moviedb.MovieApi;
+import com.erkaslan.moviedb.data.MovieApi;
 import com.erkaslan.moviedb.R;
 import com.erkaslan.moviedb.data.Movie;
 
@@ -81,6 +81,15 @@ public class HomeFragment extends Fragment{
 
         initializeRecyclerView();
         SharedViewModel sharedViewModel = new SharedViewModel(this.getActivity().getApplication());
+
+        if(inputMovie.getText().toString().isEmpty()) {
+            movie.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
+        }else{
+            sharedViewModel.setMovieList(inputMovie.getText().toString());
+            textNotFound.setVisibility(View.INVISIBLE);
+            movie.setVisibility(View.VISIBLE);
+        }
 
         //Search button click sets movie set
         buttonSearch.setOnClickListener(new View.OnClickListener() {
