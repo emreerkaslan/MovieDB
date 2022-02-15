@@ -22,7 +22,6 @@ class Repository(private val application: Application) : MovieInterface, SingleM
     //Sets url for omdb api gets the list and sends to interface on success
     fun setMovieList(search: String, movieInterface: MovieInterface) {
         val url = SEARCH_URL + search.trim().replace(" ", "+")
-        Log.v(TAG, "****$url")
         movieList.clear()
         val request = JsonObjectRequest(
             Request.Method.GET, url, null,
