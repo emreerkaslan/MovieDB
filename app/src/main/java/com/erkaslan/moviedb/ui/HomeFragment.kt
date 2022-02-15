@@ -24,7 +24,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.v(TAG, "Home: onViewCreated")
         initializeRecyclerView(binding.recylerMovie)
         val sharedViewModel = SharedViewModel(this.requireActivity().application)
 
@@ -40,7 +39,6 @@ class HomeFragment : Fragment() {
         //Search button click sets movie set
         binding.buttonSearch.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
-            Log.v(TAG, "CLICKED")
             if (binding.inputMovie.text.toString().isEmpty()) {
                 binding.recylerMovie.visibility = View.GONE
                 binding.progressBar.visibility = View.GONE
@@ -58,13 +56,10 @@ class HomeFragment : Fragment() {
         sharedViewModel.moviesAll.observe(viewLifecycleOwner, { moviesAll ->
             binding.progressBar.visibility = View.GONE
             if (moviesAll?.size == 0) {
-                Log.v(TAG, "****movie not found")
                 binding.recylerMovie.visibility = View.GONE
                 binding.textNotFound.text = "No movie found...are you sure about the title?"
                 binding.textNotFound.visibility = View.VISIBLE
             } else {
-                Log.v(TAG, "onChanged: XXX")
-                Log.v(TAG, "movies number: " + moviesAll?.size.toString())
                 binding.textNotFound.visibility = View.INVISIBLE
                 movieAdapter = context?.let {
                     MovieListAdapter(it, moviesAll ?: arrayListOf<Movie>(), object : MovieListAdapter.ItemClickListener {
@@ -90,14 +85,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        Log.v(TAG, "Home: onCreateView")
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = activity
         return binding.root
     }
 
     override fun onDestroyView() {
-        Log.v(TAG, "Home: onDestroyView")
         super.onDestroyView()
         _binding = null
     }
@@ -117,7 +110,6 @@ class HomeFragment : Fragment() {
             })
         }
         movie.adapter = movieAdapter
-        Log.v(TAG, "****adapter initialized")
     }
 
     companion object {
