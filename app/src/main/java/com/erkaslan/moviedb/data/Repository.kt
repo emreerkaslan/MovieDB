@@ -28,7 +28,6 @@ class Repository(private val application: Application) : MovieInterface, SingleM
             object : Response.Listener<JSONObject> {
                 override fun onResponse(response: JSONObject) {
                     try {
-
                         val jsonArray = response.getJSONArray("Search")
                         for (i in 0 until jsonArray.length()) {
                             val movie = jsonArray.getJSONObject(i)
