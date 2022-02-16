@@ -48,7 +48,6 @@ class Repository(private val application: Application) : MovieInterface, SingleM
                 }
             }, object : Response.ErrorListener {
                 override fun onErrorResponse(error: VolleyError) {
-                    Log.v(TAG, "****ERROR")
                     val movieError = ArrayList<Movie>()
                     movieInterface.onSuccess(movieError)
                     error.printStackTrace()
