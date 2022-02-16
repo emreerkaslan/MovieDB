@@ -30,7 +30,7 @@ class Repository(private val application: Application) : MovieInterface, SingleM
                     try {
 
                         val jsonArray = response.getJSONArray("Search")
-                        for (i in 0..(jsonArray.length() - 1)) {
+                        for (i in 0 until jsonArray.length()) {
                             val movie = jsonArray.getJSONObject(i)
                             val title = movie.getString("Title")
                             val year = movie.getString("Year")
