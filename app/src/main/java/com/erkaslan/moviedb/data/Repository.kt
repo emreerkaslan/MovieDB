@@ -38,7 +38,6 @@ class Repository(private val application: Application) : MovieInterface, SingleM
                             movieList.add(Movie(title, year, poster, id))
                         }
                         movieInterface.onSuccess(movieList)
-                        Log.v(TAG, "****list set")
                         Log.v(TAG, "****list size" + movieList.size.toString())
                     } catch (e: JSONException) {
                         val movieError = ArrayList<Movie>()
