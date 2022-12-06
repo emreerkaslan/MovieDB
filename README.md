@@ -2,7 +2,7 @@
 Android application to search and display movies by title and other filters.
 
 
-<img src="[https://github.com/favicon.ico](https://user-images.githubusercontent.com/67108859/205989419-109a1dff-44d3-4fc5-bf75-491611cccd26.png)" width="300">
+<img src="[[https://github.com/favicon.ico](https://user-images.githubusercontent.com/67108859/205989419-109a1dff-44d3-4fc5-bf75-491611cccd26.png)](https://user-images.githubusercontent.com/67108859/205989419-109a1dff-44d3-4fc5-bf75-491611cccd26.png)" width="300">
 
 ![Search-Result-Page](https://user-images.githubusercontent.com/67108859/205989437-36e4bca2-c2f8-445e-af2c-dbb67c30f34a.png | width=300)
 
